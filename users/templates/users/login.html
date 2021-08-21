@@ -1,0 +1,53 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <div class="card-title">
+                        Login
+                    </div>
+                </div>
+                <div class="card body">
+                    <form method="POST" style="text-align: center;">
+                        {% csrf_token %}
+                        {% for field in form %}
+
+                        <div class="form-group" ></div>
+                        {{ field.name }} :
+                        {{ field }}
+                        {% endfor %}
+                        <br><br>
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">Login</button>      
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<div class="row">
+    <div class="card col-md-8 offset-md-2">
+        <h5 class="card-header"><i class="bi bi-info-circle" style="color: cornflowerblue;"></i></h5>
+        <div class="card-body">
+          <h5 class="card-title">how to Login? </h5>
+          <p class="card-text text-primary">fill this form with your username and password to login.</p>
+          
+          <p class="card-text text-danger">if you didn't redirect, your Login was unsuccesful please try again by filling the form correctly.</p>
+          <a href="" class="card-text text-info"> don't have an account?Register </a>
+        </div>
+      </div>
+
+</div>
+
+
+
+</div>
+<br><br><br><br>
+{% endblock %}

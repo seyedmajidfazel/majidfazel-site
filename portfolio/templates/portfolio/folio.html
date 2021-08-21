@@ -1,0 +1,33 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="position-relative d-flex text-center mb-5">
+        <h2 class="text-24 text-light opacity-4 text-uppercase fw-600 w-100 mb-0">Portfolio</h2>
+        <p class="text-9 text-dark fw-600 position-absolute w-100 align-self-center lh-base mb-0">My Work & learning<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+      </div>
+      <br>
+    <div class="row">
+            {% for project in projects %}
+            
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card" style="width: 20rem;">
+                    
+                    <img class="card-img-top" src="{{ project.image.url }}" alt="project image">
+                    <div class="card-body">
+                    <h5 class="card-title"> {{ project.title }} </h5>
+                    <p class="card-text"> {{ project.description }} </p>
+                    
+                    </div>
+                </div>
+                
+            </div>
+              
+                {% endfor %}
+               
+        </div>
+
+
+</div>
+<br><br><br>
+{% endblock %}

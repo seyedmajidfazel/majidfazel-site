@@ -1,0 +1,49 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <div class="card-title">
+                        sign up
+                    </div>
+                </div>
+                <div class="card body">
+                    <form method="POST" style="text-align: center;">
+                        {% csrf_token %}
+                        <br>
+                        {% for field in form %}
+                        <div class="form-group">
+                            {{ field.name }} : <br>
+                            
+                            {{ field }}
+                        </div>
+                        {% endfor %}
+
+                        <button type="submit" class="btn btn-info" > sign up </button>
+                    </form>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br>
+
+    <div class="row">
+    <div class="card col-md-8 offset-md-2">
+        <h5 class="card-header"><i class="bi bi-info-circle" style="color: cornflowerblue;"></i></h5>
+        <div class="card-body">
+          <h5 class="card-title">how to create an account</h5>
+          <p class="card-text text-primary">fill this form to create an account (email is optional).</p>
+          <p class="card-text text-info">you need to have an account to send a message.</p>
+          <p class="card-text text-warning">if you didn't redirect, your sign up was unsuccesful please try again by filling the form correctly.</p>
+        </div>
+      </div>
+</div>
+</div>
+{% endblock %}

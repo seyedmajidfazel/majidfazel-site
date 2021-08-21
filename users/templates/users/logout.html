@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<br><br><br>
+<div class="container">
+  <div class="row">
+    
+  
+    <div class="card col-md-8 offset-md-2">
+        <h5 class="card-header"><i class="bi bi-info-circle" style="color: cornflowerblue;"></i></h5>
+        <div class="card-body">
+          <h5 class="card-title">You are logged out</h5>
+          <p class="card-text">you are succesfully logged out of website.</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+          <a href="{% url 'login' %}" class="btn btn-info">Login</a>
+        </div>
+      </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br>
+{% endblock %}
